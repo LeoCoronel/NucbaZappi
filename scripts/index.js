@@ -78,14 +78,13 @@ const render = () => {
     document.addEventListener('DOMContentLoaded', renderCards("pizza", 0));
     filtros.addEventListener("click", filterFoods);
     seeMore.addEventListener("click", showMore);
-}
+} 
 
 render();
 
-//NACHO 
 
+//aca va lo mio xd atte nacho 
 
-import { foods } from "./foods.js";
 
 function dailyRec(quantity, list) {
   let rndProd = [];
@@ -95,13 +94,16 @@ function dailyRec(quantity, list) {
       rndProd.push(list[r]);
 
       let { id, image, nombre, precio , type} = list[r];
-      let prodList = document.querySelector(".products-container");
+      let prodList = document.querySelector(".daily-container");
       prodList.innerHTML += `
-          <div class="product">
+          <div class="producto">
           <img src="${image}" alt="Product Image">
-          <h3>${nombre}</h3>
-          <p>${precio}</p>
-          <button data-id=${id} class="addButton">Add</button>
+          <h3 class="producto-title">${nombre}</h3>
+          <p class="producto-desc">Descripción</p>
+          <div class="buy-group">
+          <p class="price">$${precio}</p>
+          <button data-id=${id} class="buy">Add</button>
+          </div>
           </div>`;
     }else if(rndProd.length == quantity){
       return
@@ -110,23 +112,32 @@ function dailyRec(quantity, list) {
   }
 }
 function openCart() {
-  const cartButton = document.querySelector(".cartButton");
+  const cartButton = document.querySelector(".cartBtnContainer");
   const cartContainerO = document.querySelector(".cart");
-  cartButton.addEventListener("click", () => {
-
+  const closeBtn = document.querySelector(".closeCartBtn");
+  function closeCart() {
+    cartContainerO.setAttribute(
+      "style",
+      "animation-name: slide-right-out-cart;"
+    );
+    setTimeout(() => {
+      cartContainerO.classList.add("hidden");
+    }, 500);
+  }
+  cartButton.addEventListener("click", (e) => {
+e.preventDefault();
     if (cartContainerO.classList.contains("hidden")) {
       cartContainerO.removeAttribute("style");
       return cartContainerO.classList.remove("hidden");
     } else {
-      cartContainerO.setAttribute(
-        "style",
-        "animation-name: slide-right-out-cart;"
-      );
-      setTimeout(() => {
-        cartContainerO.classList.add("hidden");
-      }, 500);
+      closeCart();
+      return
     }
   });
+  closeBtn.addEventListener("click", ()=> {
+    closeCart();
+  })
+
 }
 
 function cart() {
@@ -313,10 +324,12 @@ function cart() {
     }
   });
 
-  const prodList = document.querySelector(".products-container");
-  prodList.addEventListener("click", (e) => {
+  const recoList = document.querySelector(".daily-container");
+  const prodList = document.querySelector(".lista-productos");
+
+  function addToCart(e) {
     const trg = e.target;
-    if (trg.classList.contains("addButton")) {
+    if (trg.classList.contains("buy")) {
       let id = trg.getAttribute("data-id");
       if (cart.length == 0) {
         cart = [{ id: id, quantity: 1 }];
@@ -380,8 +393,13 @@ function cart() {
         });
       }
     }
+  }
+  recoList.addEventListener("click", (e) => {
+    addToCart(e);
   });
-
+  prodList.addEventListener("click", (e) => {
+    addToCart(e);
+  });
   const bottomCart = document.querySelector(".bottomCart");
   bottomCart.addEventListener ("click", (e) => {
     let trg = e.target;
@@ -395,7 +413,8 @@ function cart() {
       prods.innerHTML = "";
       if(document.querySelector(".cartButtonCounter"))
         document.querySelector(".cartButtonCounter").classList.add("hidden");
-      
+      const total = document.querySelector(".totalPrice");
+      total.innerHTML = "";
     }
   })
 }

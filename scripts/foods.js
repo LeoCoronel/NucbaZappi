@@ -1,4 +1,4 @@
-export let foods = [
+let foods = [
         {
             id: 1,
             nombre: "mozzarella",

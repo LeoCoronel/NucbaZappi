@@ -8,25 +8,28 @@
     <link rel="stylesheet" href="styles.css">
     <title>NucbaZappi</title>
 </head>
+
 <body>
     <header class="hero">
         <nav class="nav_hero">
-            <div class="container nav_container">
-                <div class="logo">
-                    <h2 class="logo_name"><img src="./img/logo.png" class="mockup"></h2>
-                </div>
-                <div class="links">
-                    <img src="./img/Home.png">
-                    <a href="#" class="link">Home</a>
-                    <a href="#" class="link"><img src="./img/Carrito.png"></a>
-                    <a href="#" class="link"><img src="./img/User.png"></a>
-                </div>
+            <div class="logo">
+                <h2 class="logo_name"><img src="./img/logo.png" class="mockup"></h2>
             </div>
-            <div class="cartBtnContainer">
-                <button class="cartButton">Cart</button>
+            <div class="links">
+                <img src="./img/Home.png">
+                <a href="#" class="link">Home</a>
+                <div class="cartBtnContainer">
+                    <a href="#" class="link cartButton"><img class="imgButtonCart" src="./img/Carrito.png"></a>
+                </div>
 
+                <a href="#" class="link"><img src="./img/User.png"></a>
             </div>
             <div class="cart hidden">
+                <div class="topCart">
+                    <p>Carro de compras.</p>
+                    <button class="closeCartBtn">X</button>                    
+
+                </div>
                 <div class="product-cart-list">
 
                 </div>
@@ -37,21 +40,29 @@
                     <button class="buyCartBtn">
                         Comprar
                     </button>
-                    <p>Total: <span class="totalPrice">$1212222</span></p>
+                    <p>Total: <span class="totalPrice"></span></p>
                 </div>
 
             </div>
         </nav>
         <section class="container hero_main">
             <div class="hero_textos">
-                <h1 class="title">Si tenes Zappi,<h2 class="title_active"> tenes Nucba.</h2></h1>
+                <h1 class="title">Si tenes Zappi,<h2 class="title_active"> tenes Nucba.</h2>
+                </h1>
                 <p class="copy">Buscá lo que quieras y nucba te quedes sin comida.</p>
-                <a href="#" class="cta"> <img src="/images/"></a> <p class="cta_copy"> VER MÁS </p>
+                <a href="#" class="cta"> <img src="/images/"></a>
+                <p class="cta_copy"> VER MÁS </p>
             </div>
             <img src="./img/bannerZzapi.png" class="pizza_1">
         </section>
     </header>
     <main>
+        <section class="daily">
+            <p>Hoy te recomendamos...</p>
+            <div class="daily-container">
+
+            </div>
+        </section>
         <section class="productos">
             <div class="filters">
                 <h1>Categorias</h1>
