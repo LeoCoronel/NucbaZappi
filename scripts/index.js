@@ -98,7 +98,7 @@ function dailyRec(quantity, list) {
       prodList.innerHTML += `
           <div class="producto">
           <img src="${image}" alt="Product Image">
-          <h3 class="producto-title">${nombre}</h3>
+          <p class="producto-title">${nombre}</p>
           <p class="producto-desc">Descripción</p>
           <div class="buy-group">
           <p class="price">$${precio}</p>
