@@ -2,7 +2,7 @@ let foods = [
         {
             id: 1,
             nombre: "mozzarella",
-            image: "",
+            image: "https://i.imgur.com/WDrt3pa.jpg",
             ventas: 98,
             precio: 500,
             type: "pizza"
@@ -10,7 +10,7 @@ let foods = [
         {
             id: 2,
             nombre: "fugazzeta",
-            image: "",
+            image: "https://i.imgur.com/0T6aUeg.jpg",
             ventas: 36,
             precio: 600,
             type: "pizza"
@@ -18,7 +18,7 @@ let foods = [
         {
             id: 3,
             nombre: "especial",
-            image: "",
+            image: "https://i.imgur.com/hMKj5NJ.jpg",
             ventas: 85,
             precio: 550,
             type: "pizza"
@@ -26,7 +26,7 @@ let foods = [
         {
             id: 4,
             nombre: "roquefort",
-            image: "",
+            image: "https://i.ibb.co/R95tnxP/roquefort.webp",
             ventas: 62,
             precio: 700,
             type: "pizza"
@@ -34,7 +34,7 @@ let foods = [
         {
             id: 5,
             nombre: "calabresa",
-            image: "",
+            image: "https://imgur.com/4WKONR6",
             ventas: 79,
             precio: 650,
             type: "pizza"
@@ -42,7 +42,7 @@ let foods = [
         {
             id: 6,
             nombre: "jamon con huevo",
-            image: "",
+            image: "https://i.imgur.com/7PyrmkQ.jpg",
             ventas: 80,
             precio: 600,
             type: "pizza"
