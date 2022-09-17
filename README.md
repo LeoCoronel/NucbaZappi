@@ -1,5 +1,10 @@
 #Readme
-Este es un sitio web
+Integrantes
+Coronel Leonardo
+Ignacio Mattiauda
+Abril Catalano
+Cristian Pagella
+Mariano
 
 ## Project
 
